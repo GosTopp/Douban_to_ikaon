@@ -1,5 +1,6 @@
 # Douban_to_ikaon
 Fetch and parse an user's collections of books, movies and musics, then transform to suitable input form for ikaon, namely,
+
 *status#《title》（author，pubdate）//+rating/(comment)
 
 提取用户的豆瓣信息，转换成伊讲的输入，形如:
