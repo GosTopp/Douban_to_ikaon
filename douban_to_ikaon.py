@@ -2,7 +2,13 @@
 import json
 import urllib
 
-def get_books(user_name, start=0, count=100, status='', info=[]): # Maximum count allowed is 100
+def get_books(user_name, start=0, count=100, status='', info=[]):
+    '''
+    Fetch and parse the user_name's collection of books on douban.
+    The maximum count douban allows is 100.
+    status can be 'read', 'reading', 'wish' and ''. With '', all books are fetched.
+    A list of dicts is returned.
+    '''
     book_url = "https://api.douban.com//v2/book/user/{0}/collections?start={1}&status={2}&count={3}"
     url = book_url.format(user_name, start, status, count)
     response = urllib.urlopen(url);
@@ -28,6 +34,10 @@ def get_books(user_name, start=0, count=100, status='', info=[]): # Maximum coun
     return info
 
 def ikaon_print(book_info):
+    '''
+    Print book_info in ikaon.
+    book_info is a dict in the list returned by get_books().
+    '''
     title = book_info['title'].encode("utf-8")
     author_list = []
     for author in book_info['author_list']:
