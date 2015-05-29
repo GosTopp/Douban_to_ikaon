@@ -54,7 +54,7 @@ def ikaon_print(book_info):
         ikaon_book += '/({comment})'
     return ikaon_book.format(status=statuses[status], title=title, author=author, pubdate=pubdate, rating=rating, comment=comment)
 
-user_name = 'whigzhou'
+user_name = 'tcya'
 info = get_books(user_name)
 for book in info:
     print ikaon_print(book)
