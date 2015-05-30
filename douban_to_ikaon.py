@@ -28,10 +28,9 @@ def get_books(user_name, start=0, count=100, status='', info=[]):
             tmp['comment'] = book.get('comment','')
             info.append(tmp)
         start = start + count
-        info = get_books(user_name, start, count, status, info)
+        return get_books(user_name, start, count, status, info)
     else:
         return info
-    return info
 
 def ikaon_print(book_info):
     '''
